@@ -17,6 +17,8 @@ public class BuildingSystem : MonoBehaviour
 
     private PlaceableObject objectToPlace;
 
+    public List<GameObject> towers;
+
     #region Unity methods
 
 
@@ -26,9 +28,13 @@ public class BuildingSystem : MonoBehaviour
         grid = gridLayout.gameObject.GetComponent<Grid>();
     }
 
-    public void OnMouseClickOnUI()
+    public void OnMouseClickOnUI(GameObject game)
     {
         InitilazeWithObject(tower);
+        game.SetActive(false);
+      
+
+
     }
 
     #endregion
@@ -66,6 +72,11 @@ public class BuildingSystem : MonoBehaviour
 
         Vector3 position = SnapCoordinateToGrid(Vector3.zero);
         GameObject obj = Instantiate(prefab, position,Quaternion.identity);
+
+        towers.Add(obj);
+
+
+
         objectToPlace = obj.GetComponent<PlaceableObject>();
         obj.AddComponent<ObjectDrag>();
     }
