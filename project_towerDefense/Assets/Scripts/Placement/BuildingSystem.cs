@@ -70,9 +70,10 @@ public class BuildingSystem : MonoBehaviour
     public void InitilazeWithObject(GameObject prefab)
     {
 
-        Vector3 position = SnapCoordinateToGrid(Vector3.zero);
+        Vector3 position = SnapCoordinateToGrid(new Vector3(4,2,4));
         GameObject obj = Instantiate(prefab, position,Quaternion.identity);
 
+        
         towers.Add(obj);
 
 
