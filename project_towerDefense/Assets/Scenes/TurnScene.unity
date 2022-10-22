@@ -580,6 +580,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8138199341216422850, guid: 490c61e0175f88447b54b7299e02a2bc, type: 3}
   m_PrefabInstance: {fileID: 7533280}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &249803425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 249803426}
+  m_Layer: 0
+  m_Name: TurnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &249803426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249803425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.483464, y: -35.211502, z: 5.565057}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &265728787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -824,7 +854,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1980245372}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: BuildingSystem, Assembly-CSharp
           m_MethodName: OnMouseClickOnUI
           m_Mode: 2
@@ -909,8 +939,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1732965384}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1868743896}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1892,7 +1922,7 @@ GameObject:
   - component: {fileID: 702849340}
   - component: {fileID: 702849339}
   m_Layer: 0
-  m_Name: GridXZ (1)
+  m_Name: GridXZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2644,7 +2674,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1980245372}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: BuildingSystem, Assembly-CSharp
           m_MethodName: OnMouseClickOnUI
           m_Mode: 2
@@ -2729,8 +2759,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 532719381}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1868743896}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3194,7 +3224,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1072773563 stripped
 Transform:
@@ -3413,7 +3443,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1215258065 stripped
 Transform:
@@ -3937,7 +3967,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1980245372}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: BuildingSystem, Assembly-CSharp
           m_MethodName: OnMouseClickOnUI
           m_Mode: 2
@@ -4022,8 +4052,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1330011300}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1868743896}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5101,6 +5131,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a95b8d295e4cc149bf8752454bb2fad, type: 3}
+--- !u!1 &1868743895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1868743896}
+  m_Layer: 0
+  m_Name: CreateButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1868743896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868743895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1473753389}
+  - {fileID: 292812536}
+  - {fileID: 913049255}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1872050761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8138199341216422850, guid: 5a95b8d295e4cc149bf8752454bb2fad, type: 3}
@@ -5164,7 +5227,7 @@ Transform:
   m_Children:
   - {fileID: 948761403}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1955215578 stripped
 Transform:
@@ -5240,89 +5303,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a95b8d295e4cc149bf8752454bb2fad, type: 3}
---- !u!1 &1980245368
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1980245370}
-  - component: {fileID: 1980245369}
-  - component: {fileID: 1980245371}
-  - component: {fileID: 1980245372}
-  m_Layer: 0
-  m_Name: GridXZ
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!156049354 &1980245369
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980245368}
-  m_Enabled: 1
-  m_CellSize: {x: 4, y: 4, z: 1}
-  m_CellGap: {x: 0, y: 0, z: 4}
-  m_CellLayout: 0
-  m_CellSwizzle: 1
---- !u!4 &1980245370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980245368}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1980245371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980245368}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 109d985a8a43a2948818ca7f68b98322, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towers: []
-  gridCellPrefab: {fileID: 5256882653527601303, guid: dd030686ddbc03946acd884a1f051489, type: 3}
-  tower: {fileID: 2853728368004088409, guid: cc07ecf43eaed784d94e1415c19d6e98, type: 3}
-  onMousePrefab: {fileID: 0}
-  smoothMousePos: {x: 0, y: 0, z: 0}
-  height: 12
-  width: 12
-  mousePos: {x: 0, y: 0, z: 0}
---- !u!114 &1980245372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980245368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35c7239c5f4fc2e42a2df4ee575322e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLayout: {fileID: 1980245369}
-  gridLayoutY: {fileID: 0}
-  main: {fileID: 0}
-  white: {fileID: 0}
-  tower: {fileID: 6569084832338415397}
-  towers: []
 --- !u!1001 &1981225424
 PrefabInstance:
   m_ObjectHideFlags: 0
