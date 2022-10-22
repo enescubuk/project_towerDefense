@@ -45,17 +45,25 @@ public class towerDefense : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= towerStats.attackRange)
         {
             target = nearestEnemy.transform;
+            shooting();
             canShoot = true;
-            InvokeRepeating("taretShooting",0f,towerStats.attackSpeed);
-            Debug.Log(431);
+
         }
         else
         {
             target = null;
             canShoot = false;
             CancelInvoke("taretShooting");
-            
         }
+    }
+    void shooting()
+    {
+        if (canShoot == false)
+        {
+            InvokeRepeating("taretShooting",0,towerStats.attackSpeed);
+
+        }
+
     }
 
     void taretShooting()
