@@ -20,7 +20,7 @@ public class FloatSo : ScriptableObject
 
         this.amount = amount;
 
-        onChanged.Invoke();
+        //onChanged.Invoke();
     }
 
     public float Get()

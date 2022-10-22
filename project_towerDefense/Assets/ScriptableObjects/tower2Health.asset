@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22286c60d1c9c644f8f2e8490b28825d, type: 3}
-  m_Name: towerStats
+  m_Script: {fileID: 11500000, guid: f65b244cddfb00641bf828944d8d8679, type: 3}
+  m_Name: tower2Health
   m_EditorClassIdentifier: 
-  attackRange: 10
-  attackSpeed: 1
-  attackDamage: 6
-  enemyTag: Enemy
+  amount: 100

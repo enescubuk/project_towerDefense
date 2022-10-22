@@ -5,21 +5,28 @@ using UnityEngine.AI;
 
 public class enemyai : MonoBehaviour
 {
+    static List<GameObject> towersList = new List<GameObject>();
     [SerializeField]enemySo enemySo;
     private GameObject goldCase;
-    public bool isItGo = false;
+    bool isItGo = false;
     private Vector3 nextPos;
-    public bool detectNextPos = false; 
-    public bool enemyCanShoot;
+    bool detectNextPos = false; 
+    bool enemyCanShoot;
+    GameObject nearestTower;
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,enemySo.attackScanRange);
     }
-    void Awake()
+    void Start()
     {
         detectGoldCase();
+        GameObject[] towers = GameObject.FindGameObjectsWithTag(enemySo.towerTags);
+        foreach (GameObject tower in towers)
+        {
+            towersList.Add(tower);
+        }
     }
     void Update()
     {
@@ -39,7 +46,7 @@ public class enemyai : MonoBehaviour
 
             if (enemyCanShoot == false && isItGo == true)
             {
-                Debug.Log(444444444);
+                
                 InvokeRepeating("attack",0f,enemySo.attackSpeed);
             }
             else
@@ -53,7 +60,16 @@ public class enemyai : MonoBehaviour
     {
         if (isItGo == true)
         {
-            Debug.Log(this.gameObject.name + " vurdu");
+            if (nearestTower.GetComponent<towerDefense>().isDead == false)
+            {
+                Debug.Log(this.gameObject.name + " vurdu");
+                nearestTower.GetComponent<towerDefense>().takeDamage(enemySo.damageValue);
+            }
+            else
+            {
+                isItGo = false;
+                nearestTower.SetActive(false);
+            }
         }
     }
 
@@ -61,6 +77,7 @@ public class enemyai : MonoBehaviour
     {
         goldCase = GameObject.FindWithTag(enemySo.goldCaseTag);
         nextPos = goldCase.transform.position;
+        Debug.Log("asdas");
     }
     void detectIsItGo()
     {
@@ -73,8 +90,8 @@ public class enemyai : MonoBehaviour
     {
         GameObject[] towers = GameObject.FindGameObjectsWithTag(enemySo.towerTags);
         float shortestDistance = Mathf.Infinity;
-        GameObject nearestTower = null;
-        Debug.Log(11111111111);
+        nearestTower = null;
+        
         foreach (GameObject tower in towers)
         {
             float distanceToTower = Vector3.Distance(transform.position, tower.transform.position);
@@ -86,13 +103,13 @@ public class enemyai : MonoBehaviour
         }
         if (nearestTower != null && shortestDistance <= enemySo.attackScanRange )
         {
-            Debug.Log(22222222222);
+            
             nextPos = nearestTower.transform.position;
             detectNextPos = true;
         }
         else
         {
-            Debug.Log(33333333333333);
+
         }
     }
 }

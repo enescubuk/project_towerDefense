@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 2853728368004088409}
   - component: {fileID: 1168016983117647356}
   - component: {fileID: 4022090534851524918}
-  - component: {fileID: -9119601439730694180}
   - component: {fileID: 6354254437163518059}
   - component: {fileID: -7800730498975765396}
   - component: {fileID: 4063075519588884580}
+  - component: {fileID: 6569084832338415404}
   m_Layer: 0
   m_Name: chest
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3229549840826800355}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.655025, y: 21.978119, z: -22.048092}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
@@ -87,20 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-9119601439730694180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3229549840826800355}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f326b8e3fa85852448cf27fec947d3c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOnGrid: 0
-  isSelected: 0
 --- !u!65 &6354254437163518059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -142,6 +128,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6569084832338415404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3229549840826800355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa2425a2ffb5c346963ca8d83f9325b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 11400000, guid: e123655a5b2b34b4a97d284940c729fc, type: 2}
+  target: {fileID: 0}
+  towerStats: {fileID: 11400000, guid: 7e92bd2dd5afc1646baa752b70d72732, type: 2}
 --- !u!1 &5161615064519035341
 GameObject:
   m_ObjectHideFlags: 0

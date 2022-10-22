@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa2425a2ffb5c346963ca8d83f9325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 11400000, guid: e123655a5b2b34b4a97d284940c729fc, type: 2}
   target: {fileID: 0}
   towerStats: {fileID: 11400000, guid: 7e92bd2dd5afc1646baa752b70d72732, type: 2}
 --- !u!65 &699753669
@@ -1029,6 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa2425a2ffb5c346963ca8d83f9325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 11400000, guid: e123655a5b2b34b4a97d284940c729fc, type: 2}
   target: {fileID: 0}
   towerStats: {fileID: 11400000, guid: 7e92bd2dd5afc1646baa752b70d72732, type: 2}
 --- !u!1 &2004568830

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class towerDefense : MonoBehaviour
 {
+    [SerializeField]FloatSo health;
     public Transform target;
     [SerializeField]towerStats towerStats;
     private bool canShoot;
     private float rangeRadius;
+    public bool isDead = false;
     void Start()
     {
         InvokeRepeating("UpdateTarget",0f,0.5f);
@@ -16,6 +18,18 @@ public class towerDefense : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,towerStats.attackRange);
+    }
+    public void takeDamage(float amount)
+    {
+        health.Set((health.Get()) - amount);
+        checkDie();
+    }
+    void checkDie()
+    {
+        if (health.Get() <= 0)
+        {
+            isDead = true;
+        }
     }
     void Update()
     {
