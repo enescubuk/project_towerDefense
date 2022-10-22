@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class towerDefense : MonoBehaviour
 {
-    [SerializeField]FloatSo health;
+    public FloatSo health;
     public Transform target;
     [SerializeField]towerStats towerStats;
     private bool canShoot;

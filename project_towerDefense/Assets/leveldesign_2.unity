@@ -993,6 +993,7 @@ GameObject:
   - component: {fileID: 370935510}
   - component: {fileID: 370935515}
   - component: {fileID: 370935516}
+  - component: {fileID: 370935517}
   m_Layer: 0
   m_Name: enemy (1)
   m_TagString: Enemy
@@ -1086,7 +1087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370935509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.52, y: 5.21, z: 29.099998}
+  m_LocalPosition: {x: 37.58, y: 5.21, z: 12.78}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1117,6 +1118,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+--- !u!195 &370935517
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370935509}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &411228859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8138199341216422850, guid: 5a95b8d295e4cc149bf8752454bb2fad, type: 3}
@@ -1977,6 +2000,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c7239c5f4fc2e42a2df4ee575322e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SOs:
+  - {fileID: 11400000, guid: e123655a5b2b34b4a97d284940c729fc, type: 2}
+  - {fileID: 11400000, guid: 99620720f3457d843b44c688574ee466, type: 2}
+  - {fileID: 11400000, guid: f7d789dcd948d014eb5f34cc505aff05, type: 2}
+  count: 0
   gridLayout: {fileID: 702849341}
   gridLayoutY: {fileID: 0}
   main: {fileID: 0}
@@ -1995,6 +2023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109d985a8a43a2948818ca7f68b98322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SOs: []
   towers: []
   gridCellPrefab: {fileID: 5256882653527601303, guid: dd030686ddbc03946acd884a1f051489, type: 3}
   tower: {fileID: 2853728368004088409, guid: cc07ecf43eaed784d94e1415c19d6e98, type: 3}
@@ -2466,6 +2495,7 @@ GameObject:
   - component: {fileID: 845614457}
   - component: {fileID: 845614462}
   - component: {fileID: 845614463}
+  - component: {fileID: 845614464}
   m_Layer: 0
   m_Name: archer (1)
   m_TagString: Enemy
@@ -2559,7 +2589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845614456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.7, y: 5.21, z: 24.3}
+  m_LocalPosition: {x: 30.73, y: 5.21, z: 14.48}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2590,6 +2620,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+--- !u!195 &845614464
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845614456}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &846233754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8138199341216422850, guid: 5a95b8d295e4cc149bf8752454bb2fad, type: 3}
@@ -5265,6 +5317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109d985a8a43a2948818ca7f68b98322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SOs: []
   towers: []
   gridCellPrefab: {fileID: 5256882653527601303, guid: dd030686ddbc03946acd884a1f051489, type: 3}
   tower: {fileID: 2853728368004088409, guid: cc07ecf43eaed784d94e1415c19d6e98, type: 3}
@@ -5285,6 +5338,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c7239c5f4fc2e42a2df4ee575322e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SOs:
+  - {fileID: 11400000, guid: e123655a5b2b34b4a97d284940c729fc, type: 2}
+  - {fileID: 11400000, guid: 99620720f3457d843b44c688574ee466, type: 2}
+  - {fileID: 11400000, guid: f7d789dcd948d014eb5f34cc505aff05, type: 2}
+  count: 0
   gridLayout: {fileID: 1980245369}
   gridLayoutY: {fileID: 0}
   main: {fileID: 0}

@@ -8,6 +8,6 @@ public class enemyHealths : MonoBehaviour
     public void takeDamage()
     {
         health--;
-        Debug.Log(this.gameObject.name + " canı : " + health);
+        //Debug.Log(this.gameObject.name + " canı : " + health);
     }
 }

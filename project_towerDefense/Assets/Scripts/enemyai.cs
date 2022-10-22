@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class enemyai : MonoBehaviour
 {
+    NavMeshAgent agent => GetComponent<NavMeshAgent>();
     [SerializeField]enemySo enemySo;
     private GameObject goldCase;
     public bool isItGo = false;
@@ -25,6 +26,7 @@ public class enemyai : MonoBehaviour
     }
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             detectGoldCase();
@@ -32,17 +34,25 @@ public class enemyai : MonoBehaviour
         }
         if (isItGo == false)
         {
+            
+            
+            agent.isStopped = false;
+            
             scanTower();
-            transform.position = Vector3.MoveTowards(transform.position,nextPos,enemySo.Speed * Time.deltaTime);
+            //transform.position = Vector3.MoveTowards(transform.position,nextPos,enemySo.Speed * Time.deltaTime);
+            agent.SetDestination(nextPos);
             detectIsItGo();
         }
         else
         {
-
+            if (goldCase.transform.position != nextPos && nearestTower.transform.position == nextPos)
+            {
+                agent.isStopped = true;
+            }
             if (enemyCanShoot == false && isItGo == true)
             {
                 
-                InvokeRepeating("attack",0f,enemySo.attackSpeed);
+                InvokeRepeating("attack",1f,enemySo.attackSpeed);
             }
             else
             {

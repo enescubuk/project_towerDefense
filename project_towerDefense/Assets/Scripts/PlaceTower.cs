@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlaceTower : MonoBehaviour
 {
+    public List<FloatSo> SOs;
     public List<Transform> towers;
 
     public Transform gridCellPrefab;

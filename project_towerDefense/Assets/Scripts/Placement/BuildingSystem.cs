@@ -1,9 +1,11 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 public class BuildingSystem : MonoBehaviour
 {
+    public FloatSo[] SOs;
+    public int count = 0;
     public static BuildingSystem current;
 
     public GridLayout gridLayout;
@@ -32,7 +34,6 @@ public class BuildingSystem : MonoBehaviour
     {
         InitilazeWithObject(tower);
         game.SetActive(false);
-      
 
 
     }
@@ -55,7 +56,6 @@ public class BuildingSystem : MonoBehaviour
             return Vector3.zero;
         }
     }
-         
     public Vector3 SnapCoordinateToGrid(Vector3 position)
     {
         Vector3Int cellPos = gridLayout.WorldToCell(position); 
@@ -80,6 +80,9 @@ public class BuildingSystem : MonoBehaviour
 
         objectToPlace = obj.GetComponent<PlaceableObject>();
         obj.AddComponent<ObjectDrag>();
+        obj.GetComponent<towerDefense>().health = SOs[count];
+        
+        count++;
     }
 
 
