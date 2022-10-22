@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97501c995358077459880f6e11a8ec3d, type: 3}
   m_Name: archerStats
   m_EditorClassIdentifier: 
-  Speed: 0
-  attackSpeed: 0
-  damageValue: 0
-  goldCaseTag: 
-  attackScanRange: 0
-  attackRange: 0
-  towerTags: 
+  Speed: 5
+  attackSpeed: 1
+  damageValue: 1
+  goldCaseTag: goldCase
+  attackScanRange: 20
+  attackRange: 10
+  towerTags: tower

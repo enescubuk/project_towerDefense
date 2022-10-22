@@ -19,6 +19,7 @@ public class towerDefense : MonoBehaviour
     }
     void Update()
     {
+        
         if (target == null)
         {   
             return;
@@ -42,9 +43,12 @@ public class towerDefense : MonoBehaviour
                 nearestEnemy = enemy;
             }
         }
-        if (nearestEnemy != null && shortestDistance <= towerStats.attackRange)
+        if (nearestEnemy != null && shortestDistance <= towerStats.attackRange )
         {
-            target = nearestEnemy.transform;
+            if (target == null)
+            {
+                target = nearestEnemy.transform;
+            }
             shooting();
             canShoot = true;
         }
@@ -67,6 +71,6 @@ public class towerDefense : MonoBehaviour
 
     void taretShooting()
     {
-        Debug.Log("takkk");
+        Debug.Log(this.gameObject.name + "vurdu");
     }
 }

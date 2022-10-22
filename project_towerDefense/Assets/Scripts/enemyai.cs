@@ -7,10 +7,10 @@ public class enemyai : MonoBehaviour
 {
     [SerializeField]enemySo enemySo;
     private GameObject goldCase;
-    private bool isItGo = false;
+    public bool isItGo = false;
     private Vector3 nextPos;
-    private bool detectNextPos = false; 
-    private bool enemyCanShoot;
+    public bool detectNextPos = false; 
+    public bool enemyCanShoot;
 
     void OnDrawGizmosSelected()
     {
@@ -23,6 +23,11 @@ public class enemyai : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            detectGoldCase();
+            isItGo = false;
+        }
         if (isItGo == false)
         {
             scanTower();
@@ -31,17 +36,25 @@ public class enemyai : MonoBehaviour
         }
         else
         {
-            Debug.Log("attack");
-            if (enemyCanShoot == false)
+
+            if (enemyCanShoot == false && isItGo == true)
             {
+                Debug.Log(444444444);
                 InvokeRepeating("attack",0f,enemySo.attackSpeed);
+            }
+            else
+            {
+                //CancelInvoke("attack");
             }
             enemyCanShoot = true;
         }
     }
     void attack()
     {
-        Debug.Log("enemy vurdu");
+        if (isItGo == true)
+        {
+            Debug.Log(this.gameObject.name + " vurdu");
+        }
     }
 
     void detectGoldCase()
@@ -61,6 +74,7 @@ public class enemyai : MonoBehaviour
         GameObject[] towers = GameObject.FindGameObjectsWithTag(enemySo.towerTags);
         float shortestDistance = Mathf.Infinity;
         GameObject nearestTower = null;
+        Debug.Log(11111111111);
         foreach (GameObject tower in towers)
         {
             float distanceToTower = Vector3.Distance(transform.position, tower.transform.position);
@@ -70,11 +84,15 @@ public class enemyai : MonoBehaviour
                 nearestTower = tower;
             }
         }
-        if (nearestTower != null && shortestDistance <= enemySo.attackScanRange)
+        if (nearestTower != null && shortestDistance <= enemySo.attackScanRange )
         {
+            Debug.Log(22222222222);
             nextPos = nearestTower.transform.position;
-            Debug.Log(3131);
             detectNextPos = true;
+        }
+        else
+        {
+            Debug.Log(33333333333333);
         }
     }
 }
