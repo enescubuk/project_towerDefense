@@ -79,6 +79,7 @@ public class towerDefense : MonoBehaviour
         {
             InvokeRepeating("taretShooting",0,towerStats.attackSpeed);
 
+
         }
 
     }
@@ -86,5 +87,10 @@ public class towerDefense : MonoBehaviour
     void taretShooting()
     {
         Debug.Log(this.gameObject.name + "vurdu");
+        target.gameObject.GetComponent<enemyHealths>().takeDamage();
+    }
+    public void cancelInv()
+    {
+        CancelInvoke("taretShooting");
     }
 }

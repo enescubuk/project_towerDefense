@@ -5,13 +5,12 @@ using UnityEngine.AI;
 
 public class enemyai : MonoBehaviour
 {
-    static List<GameObject> towersList = new List<GameObject>();
     [SerializeField]enemySo enemySo;
     private GameObject goldCase;
-    bool isItGo = false;
+    public bool isItGo = false;
     private Vector3 nextPos;
-    bool detectNextPos = false; 
-    bool enemyCanShoot;
+    public bool detectNextPos = false; 
+    public bool enemyCanShoot;
     GameObject nearestTower;
 
     void OnDrawGizmosSelected()
@@ -22,11 +21,7 @@ public class enemyai : MonoBehaviour
     void Start()
     {
         detectGoldCase();
-        GameObject[] towers = GameObject.FindGameObjectsWithTag(enemySo.towerTags);
-        foreach (GameObject tower in towers)
-        {
-            towersList.Add(tower);
-        }
+
     }
     void Update()
     {
@@ -56,6 +51,12 @@ public class enemyai : MonoBehaviour
             enemyCanShoot = true;
         }
     }
+
+    void againMove()
+    {
+        detectGoldCase();
+        isItGo = false;
+    }
     void attack()
     {
         if (isItGo == true)
@@ -68,7 +69,10 @@ public class enemyai : MonoBehaviour
             else
             {
                 isItGo = false;
+                nearestTower.GetComponent<towerDefense>().cancelInv();
                 nearestTower.SetActive(false);
+                CancelInvoke("attack");
+                againMove();
             }
         }
     }
@@ -84,6 +88,11 @@ public class enemyai : MonoBehaviour
         if (Vector3.Distance(transform.position,nextPos) <= enemySo.attackRange)
         {
             isItGo = true;
+            Debug.Log(111111);
+        }
+        else
+        {
+            isItGo = false;
         }
     }
     void scanTower()
