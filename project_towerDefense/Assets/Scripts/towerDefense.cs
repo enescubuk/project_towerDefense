@@ -47,7 +47,6 @@ public class towerDefense : MonoBehaviour
             target = nearestEnemy.transform;
             shooting();
             canShoot = true;
-
         }
         else
         {
