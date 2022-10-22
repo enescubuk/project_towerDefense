@@ -35,7 +35,7 @@ public class CameraMouseOrbit : MonoBehaviour
     {
         if (!(bool)(Object)this.target)
             return;
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             this.x += (float)((double)Input.GetAxis("Mouse X") * (double)this.xSpeed * (double)this.distance * 0.0199999995529652);
             this.y -= (float)((double)Input.GetAxis("Mouse Y") * (double)this.ySpeed * 0.0199999995529652);

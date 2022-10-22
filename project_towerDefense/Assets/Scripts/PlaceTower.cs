@@ -28,6 +28,8 @@ public class PlaceTower : MonoBehaviour
     void Update()
     {
         GetMousePosOnGrid();
+
+        PlacingTower();
     }
 
     public void OnMouseClickOnUI()
@@ -36,6 +38,19 @@ public class PlaceTower : MonoBehaviour
         {
             onMousePrefab = Instantiate(tower,mousePos,Quaternion.identity);
             towers.Add(onMousePrefab);
+        }
+    }
+
+    void PlacingTower()
+    {
+
+        if (onMousePrefab != null)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray,out RaycastHit hitInfo,100f))
+            {
+                onMousePrefab.transform.position = hitInfo.point;
+            }
         }
     }
 
@@ -56,7 +71,7 @@ public class PlaceTower : MonoBehaviour
             
             mousePos = ray.GetPoint(enter);
             smoothMousePos = mousePos;
-            mousePos.y = 0;
+            //mousePos.y = 0;
             mousePos = Vector3Int.RoundToInt(mousePos);
 
             foreach (var node in nodes)
