@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1996242194862113279}
   m_Layer: 0
   m_Name: tower 2
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa2425a2ffb5c346963ca8d83f9325b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrow: {fileID: 0}
   health: {fileID: 11400000, guid: e123655a5b2b34b4a97d284940c729fc, type: 2}
   target: {fileID: 0}
   towerStats: {fileID: 11400000, guid: 7e92bd2dd5afc1646baa752b70d72732, type: 2}

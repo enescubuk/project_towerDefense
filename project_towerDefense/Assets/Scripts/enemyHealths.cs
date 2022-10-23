@@ -8,7 +8,7 @@ public class enemyHealths : MonoBehaviour
     public int health = 10;
     void Awake()
     {
-        coinController = GameObject.Find("coinController").GetComponent<coinController>();
+        //coinController = GameObject.Find("coinController").GetComponent<coinController>();
     }
     public void takeDamage()
     {

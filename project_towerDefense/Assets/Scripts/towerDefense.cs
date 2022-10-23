@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class towerDefense : MonoBehaviour
 {
+    public GameObject arrow => GameObject.Find("arrow");
     public FloatSo health;
     public Transform target;
     [SerializeField]towerStats towerStats;
@@ -12,6 +13,7 @@ public class towerDefense : MonoBehaviour
     public bool isDead = false;
     void Start()
     {
+        
         InvokeRepeating("UpdateTarget",0f,0.5f);
     }
     void OnDrawGizmosSelected()
@@ -89,9 +91,19 @@ public class towerDefense : MonoBehaviour
     {
         Debug.Log(this.gameObject.name + "vurdu");
         target.gameObject.GetComponent<enemyHealths>().takeDamage();
+        ArrowSpawn(target.transform.position,arrow);
         
 
     }
+
+    public void ArrowSpawn(Vector3 target, GameObject arrowObj)
+    {
+
+        GameObject arrow = Instantiate(arrowObj,gameObject.transform.position,Quaternion.identity);
+        arrow.GetComponent<ArrowSctipt>().target = target;
+        
+    }
+
     public void cancelInv()
     {
         CancelInvoke("taretShooting");

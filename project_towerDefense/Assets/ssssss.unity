@@ -6669,6 +6669,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1996242194862113277, guid: f85ed954c24629e488c8490a050681ee, type: 3}
+      propertyPath: arrow
+      value: 
+      objectReference: {fileID: 742553017873082733}
     - target: {fileID: 6213544172247199145, guid: f85ed954c24629e488c8490a050681ee, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6715,10 +6719,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6733199392440743699, guid: f85ed954c24629e488c8490a050681ee, type: 3}
       propertyPath: m_Name
-      value: tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733199392440743699, guid: f85ed954c24629e488c8490a050681ee, type: 3}
-      propertyPath: m_TagString
       value: tower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
