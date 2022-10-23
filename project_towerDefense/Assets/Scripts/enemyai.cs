@@ -13,6 +13,7 @@ public class enemyai : MonoBehaviour
     public bool detectNextPos = false; 
     public bool enemyCanShoot;
     public GameObject nearestTower;
+    private Animator animator;
 
     void OnDrawGizmosSelected()
     {
@@ -26,7 +27,7 @@ public class enemyai : MonoBehaviour
     }
     void Update()
     {
-        if (nearestTower != null &&nearestTower.GetComponent<towerDefense>().isDead == true)
+        if (nearestTower != null && nearestTower.GetComponent<towerDefense>().isDead == true)
         {
             againMove();
         }
@@ -40,6 +41,7 @@ public class enemyai : MonoBehaviour
             
             
             agent.isStopped = false;
+            //animator.SetBool("isAttack",true);
             
             scanTower();
             //transform.position = Vector3.MoveTowards(transform.position,nextPos,enemySo.Speed * Time.deltaTime);
@@ -51,6 +53,7 @@ public class enemyai : MonoBehaviour
             if (goldCase.transform.position != nextPos && nearestTower.transform.position == nextPos)
             {
                 agent.isStopped = true;
+                //animator.SetBool("isAttack",false);
             }
             if (enemyCanShoot == false && isItGo == true)
             {
