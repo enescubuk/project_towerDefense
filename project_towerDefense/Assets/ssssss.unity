@@ -2597,7 +2597,7 @@ MonoBehaviour:
   gridLayoutY: {fileID: 0}
   main: {fileID: 0}
   white: {fileID: 0}
-  tower: {fileID: 0}
+  tower: {fileID: 2140533159}
   towers: []
 --- !u!114 &702849340
 MonoBehaviour:
@@ -6735,7 +6735,7 @@ MonoBehaviour:
   gridLayoutY: {fileID: 0}
   main: {fileID: 0}
   white: {fileID: 0}
-  tower: {fileID: 0}
+  tower: {fileID: 2140533159}
   towers: []
 --- !u!1001 &1981225424
 PrefabInstance:
@@ -7325,6 +7325,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8138199341216422850, guid: 5a95b8d295e4cc149bf8752454bb2fad, type: 3}
   m_PrefabInstance: {fileID: 682574365}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2140533159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2618455745981164829, guid: d2f91ed7e47ba7542b1d037802ee0d25, type: 3}
+  m_PrefabInstance: {fileID: 2189148074415944928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2146291931 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8915827099730018680, guid: 5a95b8d295e4cc149bf8752454bb2fad, type: 3}
@@ -7457,6 +7462,10 @@ PrefabInstance:
     - target: {fileID: 2618455745981164829, guid: d2f91ed7e47ba7542b1d037802ee0d25, type: 3}
       propertyPath: m_Name
       value: tower (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618455745981164829, guid: d2f91ed7e47ba7542b1d037802ee0d25, type: 3}
+      propertyPath: m_TagString
+      value: tower
       objectReference: {fileID: 0}
     - target: {fileID: 3394956607836780455, guid: d2f91ed7e47ba7542b1d037802ee0d25, type: 3}
       propertyPath: m_RootOrder

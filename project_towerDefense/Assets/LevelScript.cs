@@ -11,6 +11,7 @@ public class LevelScript : MonoBehaviour
     [SerializeField] FadingPanel black;
     [SerializeField] FadingPanel white;
 
+    WinLose winLose => GetComponent<WinLose>();
     private void Start()
     {
         black.FadeOut(1);
@@ -23,6 +24,8 @@ public class LevelScript : MonoBehaviour
         }
         
     }
+
+ 
     public void NextLevel()
     {
         sceneLoad = true;
@@ -40,7 +43,7 @@ public class LevelScript : MonoBehaviour
 
     public void TryAgain()
     {
-
+       
         sceneLoad = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 

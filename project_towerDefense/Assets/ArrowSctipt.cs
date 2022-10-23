@@ -30,7 +30,7 @@ public class ArrowSctipt : MonoBehaviour
     public void ArrowMove(Vector3 target)
     {
         transform.position = Vector3.MoveTowards(transform.position, target, 10 * Time.deltaTime);
-        transform.LookAt(target, Vector3.up);
+        transform.LookAt(target, Vector3.down);
 
     }
 }
