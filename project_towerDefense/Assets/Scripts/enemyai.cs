@@ -80,8 +80,14 @@ public class enemyai : MonoBehaviour
                 if (nextPos != goldCase.transform.position)
                 {
                     nearestTower.GetComponent<towerDefense>().takeDamage(enemySo.damageValue);
+                    Debug.Log("kuleye vuruyor");
                 }
-                Debug.Log(1);
+                else
+                {
+                    Debug.Log("altına vuruyo");
+                    GameObject.Find("coinController").GetComponent<coinController>().stealMoney(enemySo.stealMoney);
+                }
+                
             }
             else
             {

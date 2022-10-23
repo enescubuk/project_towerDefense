@@ -11,5 +11,6 @@ public class enemySo : ScriptableObject
     public float attackScanRange;
     public float attackRange;
     public string towerTags;
+    public int stealMoney;
 
 }
