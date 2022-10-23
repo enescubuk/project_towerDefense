@@ -36,7 +36,7 @@ public class BuildingSystem : MonoBehaviour
     {
         
         Vector3 position = SnapCoordinateToGrid(GetMouseWorldPos());
-        ghostObj = Instantiate(prefab, GetMouseWorldPos(), Quaternion.identity);
+        ghostObj = Instantiate(prefab, GetMouseWorldPos(), Quaternion.Euler(new Vector3(-90, 0, 0)));
     }
 
     public void DragImage()
@@ -87,7 +87,7 @@ public class BuildingSystem : MonoBehaviour
     {
 
         Vector3 position = SnapCoordinateToGrid(GetMouseWorldPos());
-        GameObject obj = Instantiate(prefab, position, Quaternion.Euler(new Vector3(0, 0, 0)));
+        GameObject obj = Instantiate(prefab, position, Quaternion.Euler(new Vector3(-90, 0, 0)));
 
         
         towers.Add(obj);

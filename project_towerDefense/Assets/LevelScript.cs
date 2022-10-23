@@ -52,7 +52,7 @@ public class LevelScript : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(1);
        
-        Debug.Log(31);
+        Debug.Log(31);  
        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
