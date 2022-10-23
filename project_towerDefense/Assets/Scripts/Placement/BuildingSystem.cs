@@ -60,12 +60,15 @@ public class BuildingSystem : MonoBehaviour
 
     public static Vector3 GetMouseWorldPos()
     {
+       
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         
             if (Physics.Raycast(ray,out RaycastHit raycastHit))
-        {
-            return raycastHit.point;
+             {
+            GameObject a = raycastHit.collider.gameObject; ;
+
+            return a.transform.position;//+ new Vector3(0,2.5f,0);
         }
         else
         {
