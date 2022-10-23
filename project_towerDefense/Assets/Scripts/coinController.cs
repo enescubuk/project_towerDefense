@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class coinController : MonoBehaviour
 {
     [SerializeField]FloatSo coin;
     private int coinIncrase;
+    public TMP_Text coinText;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,6 @@ public class coinController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        coinText.text = coin.Get().ToString();
     }
 }

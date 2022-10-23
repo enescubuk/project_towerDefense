@@ -91,8 +91,11 @@ public class towerDefense : MonoBehaviour
     void taretShooting()
     {
         Debug.Log(this.gameObject.name + "vurdu");
-        target.gameObject.GetComponent<enemyHealths>().takeDamage();
-        ArrowSpawn(target.transform.position,arrow);
+        if (target != null)
+        {
+            target.gameObject.GetComponent<enemyHealths>().takeDamage();
+            ArrowSpawn(target.transform.position,arrow);
+        }
         
 
     }
