@@ -21,6 +21,8 @@ public class BuildingSystem : MonoBehaviour
 
     public List<GameObject> towers;
 
+    GameObject ghostObj;
+
     #region Unity methods
 
 
@@ -30,8 +32,22 @@ public class BuildingSystem : MonoBehaviour
         grid = gridLayout.gameObject.GetComponent<Grid>();
     }
 
+    public void StartDrag(GameObject prefab)
+    {
+        
+        Vector3 position = SnapCoordinateToGrid(GetMouseWorldPos());
+        ghostObj = Instantiate(prefab, GetMouseWorldPos(), Quaternion.identity);
+    }
+
+    public void DragImage()
+    {
+        
+        ghostObj.transform.position = SnapCoordinateToGrid(GetMouseWorldPos());
+
+    }
     public void OnMouseClickOnUI(GameObject game)
     {
+        Destroy(ghostObj);
         InitilazeWithObject(tower);
         game.SetActive(false);
 
@@ -70,8 +86,8 @@ public class BuildingSystem : MonoBehaviour
     public void InitilazeWithObject(GameObject prefab)
     {
 
-        Vector3 position = SnapCoordinateToGrid(new Vector3(4,2,4));
-        GameObject obj = Instantiate(prefab, position,Quaternion.identity);
+        Vector3 position = SnapCoordinateToGrid(GetMouseWorldPos());
+        GameObject obj = Instantiate(prefab, position, Quaternion.Euler(new Vector3(0, 0, 0)));
 
         
         towers.Add(obj);

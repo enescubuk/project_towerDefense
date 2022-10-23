@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65b244cddfb00641bf828944d8d8679, type: 3}
   m_Name: tower3Health
   m_EditorClassIdentifier: 
-  amount: 2
+  amount: 100
