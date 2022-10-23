@@ -19,3 +19,4 @@ MonoBehaviour:
   attackScanRange: 10
   attackRange: 5
   towerTags: tower
+  stealMoney: 1
