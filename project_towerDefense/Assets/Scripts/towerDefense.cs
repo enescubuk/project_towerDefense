@@ -71,6 +71,7 @@ public class towerDefense : MonoBehaviour
         }
         else
         {
+            Debug.Log(69);
             target = null;
             canShoot = false;
             CancelInvoke("taretShooting");

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class buttonController : MonoBehaviour
 {
+    [SerializeField]FloatSo Coin;
     public FloatSo tower1Health;
     public FloatSo tower2Health;
     public FloatSo tower3Health;
@@ -27,6 +28,12 @@ public class buttonController : MonoBehaviour
         tower2Text.text =  "%" +tower2Health.Get().ToString();
         tower3Text.text =  "%" +tower3Health.Get().ToString();
     }
+    void write()
+    {
+        tower1Text.text =  "%" +tower1Health.Get().ToString();
+        tower2Text.text =  "%" +tower2Health.Get().ToString();
+        tower3Text.text =  "%" +tower3Health.Get().ToString();
+    }
     public void last()
     {
         GameObject.Find("buttonController").SetActive(false);
@@ -36,5 +43,36 @@ public class buttonController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void kule1()
+    {
+        if (Coin.Get() > Mathf.RoundToInt((100-tower1Health.Get())/10) && tower1Health.Get() < 100)
+        {
+            Coin.Set(Coin.Get()-Mathf.RoundToInt((100-tower1Health.Get())/10));
+            Debug.Log(Mathf.RoundToInt((100-tower1Health.Get())/10));
+            tower1Health.Set(tower1Health.Get()+100-tower1Health.Get());
+        }
+        write();
+    }
+    public void kule2()
+    {
+        if (Coin.Get() > Mathf.RoundToInt((100-tower2Health.Get())/10) && tower2Health.Get() < 100)
+        {
+            Coin.Set(Coin.Get()-Mathf.RoundToInt((100-tower2Health.Get())/10));
+            Debug.Log(Mathf.RoundToInt((100-tower2Health.Get())/10));
+            tower2Health.Set(tower2Health.Get()+100-tower2Health.Get());
+        }
+        write();
+    }
+    public void kule3()
+    {
+        if (Coin.Get() > Mathf.RoundToInt((100-tower3Health.Get())/10) && tower3Health.Get() < 100)
+        {
+            Coin.Set(Coin.Get()-Mathf.RoundToInt((100-tower3Health.Get())/10));
+            Debug.Log(Mathf.RoundToInt((100-tower3Health.Get())/10));
+            tower3Health.Set(tower3Health.Get()+100-tower3Health.Get());
+        }
+        write();
     }
 }
