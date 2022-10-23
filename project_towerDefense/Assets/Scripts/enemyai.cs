@@ -9,10 +9,10 @@ public class enemyai : MonoBehaviour
     [SerializeField]enemySo enemySo;
     private GameObject goldCase;
     public bool isItGo = false;
-    private Vector3 nextPos;
+    public Vector3 nextPos;
     public bool detectNextPos = false; 
     public bool enemyCanShoot;
-    GameObject nearestTower;
+    public GameObject nearestTower;
 
     void OnDrawGizmosSelected()
     {
@@ -95,6 +95,7 @@ public class enemyai : MonoBehaviour
                 isItGo = false;
                 nearestTower.GetComponent<towerDefense>().cancelInv();
                 nearestTower.SetActive(false);
+                nearestTower = null;
                 CancelInvoke("attack");
                 againMove();
             }
@@ -136,7 +137,21 @@ public class enemyai : MonoBehaviour
         if (nearestTower != null && shortestDistance <= enemySo.attackScanRange )
         {
             
+            
+            
             nextPos = nearestTower.transform.position;
+            if (this.gameObject.name.Contains("enemy"))
+            {
+                if (nextPos.y >= 7)
+                {
+                    Debug.Log(3131);
+                    detectGoldCase();
+                }
+                else
+                {
+                    Debug.Log("hobaa");
+                }
+            }
             detectNextPos = true;
         }
         else

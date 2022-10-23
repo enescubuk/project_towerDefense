@@ -44,7 +44,7 @@ public class towerDefense : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = lookRotation.eulerAngles;
-        gameObject.transform.rotation = Quaternion.Euler(0,rotation.y - 90,0);
+        GameObject.FindWithTag("tower_archer").transform.rotation = Quaternion.Euler(0,rotation.y,0);
     }
     void UpdateTarget()
     {

@@ -8,6 +8,7 @@ TagManager:
   - goldCase
   - tower
   - Tile
+  - tower_archer
   layers:
   - Default
   - TransparentFX
