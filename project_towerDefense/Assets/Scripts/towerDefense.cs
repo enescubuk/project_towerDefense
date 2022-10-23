@@ -21,6 +21,7 @@ public class towerDefense : MonoBehaviour
     }
     public void takeDamage(float amount)
     {
+
         health.Set((health.Get()) - amount);
         checkDie();
     }
@@ -88,6 +89,8 @@ public class towerDefense : MonoBehaviour
     {
         Debug.Log(this.gameObject.name + "vurdu");
         target.gameObject.GetComponent<enemyHealths>().takeDamage();
+        
+
     }
     public void cancelInv()
     {

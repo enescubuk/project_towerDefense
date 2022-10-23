@@ -26,12 +26,15 @@ public class enemyai : MonoBehaviour
     }
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.E))
+        if (nearestTower != null &&nearestTower.GetComponent<towerDefense>().isDead == true)
         {
-            detectGoldCase();
-            isItGo = false;
+            againMove();
         }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    detectGoldCase();
+        //    isItGo = false;
+        //}
         if (isItGo == false)
         {
             
@@ -73,11 +76,16 @@ public class enemyai : MonoBehaviour
         {
             if (nearestTower.GetComponent<towerDefense>().isDead == false)
             {
-                Debug.Log(this.gameObject.name + " vurdu");
-                nearestTower.GetComponent<towerDefense>().takeDamage(enemySo.damageValue);
+                //Debug.Log(this.gameObject.name + " vurdu");
+                if (nextPos != goldCase.transform.position)
+                {
+                    nearestTower.GetComponent<towerDefense>().takeDamage(enemySo.damageValue);
+                }
+                Debug.Log(1);
             }
             else
             {
+                Debug.Log(2);
                 isItGo = false;
                 nearestTower.GetComponent<towerDefense>().cancelInv();
                 nearestTower.SetActive(false);
@@ -91,14 +99,13 @@ public class enemyai : MonoBehaviour
     {
         goldCase = GameObject.FindWithTag(enemySo.goldCaseTag);
         nextPos = goldCase.transform.position;
-        Debug.Log("asdas");
     }
     void detectIsItGo()
     {
         if (Vector3.Distance(transform.position,nextPos) <= enemySo.attackRange)
         {
             isItGo = true;
-            Debug.Log(111111);
+            InvokeRepeating("attack",1,enemySo.attackSpeed);
         }
         else
         {

@@ -7,7 +7,14 @@ public class enemyHealths : MonoBehaviour
     public int health = 10;
     public void takeDamage()
     {
-        health--;
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            health--;
+        }
         //Debug.Log(this.gameObject.name + " canı : " + health);
     }
 }
