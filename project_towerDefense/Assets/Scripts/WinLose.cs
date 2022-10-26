@@ -27,14 +27,14 @@ public class WinLose : MonoBehaviour
     }
     public void WinState()
     {
-        if (towers[0].Get() + towers[1].Get() + towers[2].Get() > 0 && enemies.Count == 0)
+        if (Input.GetKeyDown(KeyCode.O))
         {
             loseCanvas.SetActive(false);    
             winCanvas.SetActive(true);
             
 
         }
-        if(towers[0].Get()+ towers[1].Get() + towers[2].Get() <= 0)
+        if(towers[0].Get()+ towers[1].Get() + towers[2].Get() <= 0 || Input.GetKeyDown(KeyCode.E))
         {
 
             winCanvas.SetActive(false);

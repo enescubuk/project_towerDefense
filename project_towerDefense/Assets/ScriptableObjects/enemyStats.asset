@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   attackSpeed: 1
-  damageValue: 1
+  damageValue: 3
   goldCaseTag: goldCase
   attackScanRange: 10
   attackRange: 5

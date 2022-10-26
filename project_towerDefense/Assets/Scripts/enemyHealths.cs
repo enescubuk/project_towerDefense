@@ -23,7 +23,7 @@ public class enemyHealths : MonoBehaviour
         }
         else
         {
-            health--;
+            health -= 4;
             slider.value = health;
         }
         //Debug.Log(this.gameObject.name + " canı : " + health);
